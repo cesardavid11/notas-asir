@@ -1,10 +1,10 @@
 # 📚 Notas ASIR — Cesar
 
-Repositorio de notas técnicas del ciclo ASIR (IES Doctor Fleming, Oviedo), enfocado en administración de sistemas y camino hacia ciberseguridad (SOC / pentesting).
+Repositorio de notas técnicas del ciclo ASIR (IES Doctor Fleming, Oviedo), enfocado en administración de sistemas.
 
 ## ¿Por qué este repo?
 
-No tomé notas mientras aprendía por vagancia 😅. Este repo es la reconstrucción documentada de esos conocimientos, hecha bien desde ahora en adelante. Sirve como:
+Creé este repo principalmente como mi 'segundo cerebro' para documentar lo que voy aprendiendo y tenerlo accesible desde cualquier lugar. Sirve como:
 - Portfolio demostrable para entrevistas de FCT
 - Referencia rápida para no repetir errores ya resueltos
 - Evidencia de progreso real, no solo "vi un curso"
@@ -12,12 +12,11 @@ No tomé notas mientras aprendía por vagancia 😅. Este repo es la reconstrucc
 ## Estructura
 
 ```
-01-linux/              → Permisos, ACLs, procesos, systemd, cron
+01-linux/               → Permisos, ACLs, procesos, systemd, cron
 02-redes/               → OSI/TCP-IP, subnetting, Wireshark, routing (OSPF/BGP)
 03-windows-server-ad/   → AD DS, DNS, Kerberos, GPOs
 04-seguridad/           → Security+, conceptos, roadmap de certificaciones
-05-ctf-writeups/        → OverTheWire Bandit y futuros CTFs
-06-scripting/           → Bash, PowerShell
+05-scripting/           → Bash, PowerShell
 00-templates/           → Plantillas para nuevas notas (usar SIEMPRE una de estas)
 ```
 
