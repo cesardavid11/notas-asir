@@ -1,19 +1,24 @@
-# [Empaquetado, Compresión y SSH]
+# Empaquetado, Compresión y SSH
 
 **Fecha:** 2026-08-30
 **Categoría:** (Linux)
 
-# Empaquetado (Archivado): 
+---
+
+## Conceptos Importantes 
+
+### Empaquetado (Archivado): 
 Agrupa múltiples archivos y directorios en un único archivo (un contenedor), conservando
 permisos, estructura de carpetas y metadatos. No reduce el tamaño.
 
-# Compresión: 
+### Compresión: 
 Aplica algoritmos matemáticos para reducir el espacio ocupado por un archivo o empaquetado.
 
-# SSH (Secure Shell): 
+### SSH (Secure Shell): 
 Protocolo de red cifrado que permite administrar y transferir archivos entre máquinas remotas 
 de forma segura.
 
+---
 
 ## Uso de tar (Empaquetado y Compresión)
 tar (Tape Archive). El formato comprimido más común combina tar con el compresor gzip, generando 
@@ -21,15 +26,15 @@ archivos con extensión .tar.gz o .tgz.
 
 Desglose de Flags de tar
 
--c (create): Crea un nuevo archivo.
+* -c (create): Crea un nuevo archivo.
 
--x (extract): Extrae el contenido de un archivo.
+* -x (extract): Extrae el contenido de un archivo.
 
--z (gzip): Filtra el archivo mediante el algoritmo de compresión gzip.
+* -z (gzip): Filtra el archivo mediante el algoritmo de compresión gzip.
 
--v (verbose): Muestra los archivos procesados en la terminal.
+* -v (verbose): Muestra los archivos procesados en la terminal.
 
--f (file): Especifica el nombre del archivo destino/origen. (Debe ser el último flag antes del nombre).
+* -f (file): Especifica el nombre del archivo destino/origen. (Debe ser el último flag antes del nombre).
 
 
 ## Crear un tarball comprimido (tar -czvf)
@@ -48,8 +53,9 @@ Para extraer el contenido en una carpeta específica (ej. /tmp):
 
 tar -xzvf archivo.tar.gz -C /tmp
 
-
-# Configuración del Servidor SSH (openssh-server)
+---
+ 
+## Configuración del Servidor SSH (openssh-server)
 
 1. Instalar el servidor SSH
 

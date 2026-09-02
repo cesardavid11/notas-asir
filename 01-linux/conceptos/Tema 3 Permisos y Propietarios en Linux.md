@@ -1,9 +1,11 @@
-# [Permisos y Propietarios]
+# Permisos y Propietarios
 
 **Fecha:** 2026-08-30
 **Categoría:** (Linux)
 
-## ¿Qué es?
+---
+
+## ¿Qué son los  Permisos y Propiedades?
 
 En Linux y sistemas Unix, los permisos determinan qué acciones puede realizar 
 un usuario sobre un archivo o directorio. Para representarlos de forma clara y 
@@ -28,21 +30,13 @@ la notación octal o numérica (4-2-1).
 Cada archivo o directorio asigna estos permisos a tres conjuntos de usuarios 
 distintos, siempre en este orden exacto:
 
-u (User/Owner): El usuario propietario del archivo.
+* u (User/Owner): El usuario propietario del archivo.
 
-g (Group): Los usuarios que pertenecen al grupo propietario del archivo.
+* g (Group): Los usuarios que pertenecen al grupo propietario del archivo.
 
-o (Others): Cualquier otro usuario del sistema.
+* o (Others): Cualquier otro usuario del sistema.
 
-Si ejecutas el comando ls -l en la terminal, verás un bloque de 10 caracteres como este:
-
-
-- r w x r - x r - -
-│ └──┬──┘ └──┬──┘ └──┬──┘
-│    │       │       └ Others (Otros): r-- (Solo lectura)
-│    │       └──────── Group (Grupo): r-x (Lectura y ejecución)
-│    └──────────────── Owner (Propietario): rwx (Todos los permisos)
-└───────────────────── Tipo de nodo (- para archivo, d para directorio)
+* Si ejecutas el comando ls -l en la terminal, verás un bloque de 10 caracteres como este:
 
 
 ## La Notación Octal o Numérica (4-2-1)
@@ -50,11 +44,11 @@ La notación numérica convierte las letras rwx en un sistema binario
 (donde 1 significa concedido y 0 denegado). Cada letra tiene asignado 
 un valor numérico equivalente en base octal:
 
-Lectura (r) = 4  (Binario: 100)
+* Lectura (r) = 4  (Binario: 100)
 
-Escritura (w) = 2  (Binario: 010)
+* Escritura (w) = 2  (Binario: 010)
 
-Ejecución (x) = 1  (Binario: 001)
+* Ejecución (x) = 1  (Binario: 001)
 
 Para calcular el permiso de cada grupo (Propietario, Grupo, Otros), 
 simplemente sumas los valores:
@@ -70,10 +64,11 @@ simplemente sumas los valores:
 | `rw-` | `110` | 4 + 2 + 0 | **6** | Lectura y escritura (Estándar documentos) |
 | `rwx` | `111` | 4 + 2 + 1 | **7** | Lectura, escritura y ejecución (Acceso total) |
 
+---
 
-# Comandos de Modificacion de permisos
+## Comandos de Modificacion de permisos
 
-## Comando chmod: Modificación de Permisos
+### Comando chmod: Modificación de Permisos
 El comando chmod (change mode) permite alterar los permisos de lectura (r), escritura
 (w) y ejecución (x) asignados al propietario (u), al grupo (g) y a otros usuarios (o).
 
@@ -81,57 +76,66 @@ Cambia los permisos asignando valores numéricos exactos para cada entidad: [Pro
 
 Ejemplos: 
 
-  Establece los permisos de lectura, escritura y ejecucuion al propietario, y solo de 
+* Establece los permisos de lectura, escritura y ejecucuion al propietario, y solo de 
 lectura y ejecucion al grupo  y otros
+
 chmod 755 archivo.sh
 
-  Otorga permisos de ejecución (+x) únicamente al propietario (u)
+* Otorga permisos de ejecución (+x) únicamente al propietario (u)
+
 chmod u+x script.sh
 
-  Quita el permiso de escritura (-w) tanto al grupo como a otros usuarios
+* Quita el permiso de escritura (-w) tanto al grupo como a otros usuarios
+
 chmod go-w documento.docx
 
 
-## Comando chown (Change Owner)
+### Comando chown (Change Owner)
 El comando chown cambia el usuario propietario y, opcionalmente, el grupo propietario de 
 un archivo o directorio. Por razones de seguridad, esta operación generalmente requiere 
 privilegios de superusuario (sudo).
 
 Ejemplos: 
 
- Cambia solo el usuario propietario a "carlos"
+* Cambia solo el usuario propietario a "carlos"
+
 sudo chown carlos documento.pdf
 
-  Cambia el usuario propietario a "carlos" y el grupo a "desarrollo" al mismo tiempo
+* Cambia el usuario propietario a "carlos" y el grupo a "desarrollo" al mismo tiempo
+
 sudo chown carlos:desarrollo proyecto/
 
-  Cambia recursivamente (-R) el propietario y grupo de un directorio y todo su contenido
+* Cambia recursivamente (-R) el propietario y grupo de un directorio y todo su contenido
+
 sudo chown -R carlos:desarrollo /var/www/html/
 
 
-## Comando chgrp (Change Group)
+### Comando chgrp (Change Group)
 El comando chgrp está dedicado exclusivamente a modificar el grupo propietario. Puede 
 ser utilizado por el propietario del archivo si este pertenece al grupo de destino, o 
 por el administrador.
 
 Ejemplos:
 
-  Cambia el grupo propietario a "analytics"
+* Cambia el grupo propietario a "analytics"
+
 chgrp analytics datos.csv
 
-  Cambia el grupo de forma recursiva en todo un directorio
+* Cambia el grupo de forma recursiva en todo un directorio
+
 chgrp -R analytics /datos/reportes/
 
+---
 
-## La Máscara de Permisos: umask
+### La Máscara de Permisos: umask
 Cuando se crea un archivo o directorio nuevo, el sistema operativo le asigna permisos 
 predeterminados. El comando umask (user file-creation mode mask) define qué permisos 
 se deben sustraer o bloquear a partir del permiso máximo base del sistema.
  
 
-## Permisos Máximos Base del Sistema
+### Permisos Máximos Base del Sistema
 Por razones de seguridad, el núcleo de Linux nunca otorga permisos de ejecución (x)
- por defecto a archivos de texto o datos ordinarios:
+por defecto a archivos de texto o datos ordinarios:
 
 Permiso base máximo para Archivos: 666 (rw-rw-rw-)
 
@@ -139,7 +143,7 @@ Permiso base máximo para Directorios: 777 (rwxrwxrwx) (requiere ejecución 'x'
 para permitir navegación interna)
  
 
-## Cálculo del Permiso Efectivo
+### Cálculo del Permiso Efectivo
 La fórmula para calcular los permisos finales de un elemento nuevo es la resta lógica 
 entre el permiso base y el valor de la umask:
 
@@ -160,14 +164,17 @@ Archivos nuevos: 666 - 077 = 600 (rw-------) - Lectura/Escritura solo para el du
 Directorios nuevos: 777 - 077 = 700 (rwx------) - Acceso total solo para el dueño.
 
 
-## Uso del comando umask en la Terminal
+### Uso del comando umask en la Terminal
 
- Consultar el valor actual de umask
+* Consultar el valor actual de umask
+
 umask
 
- Establecer temporalmente una nueva máscara
+* Establecer temporalmente una nueva máscara
+
 umask 027
 
- Consultar la máscara en notación simbólica (muestra los permisos permitidos)
+* Consultar la máscara en notación simbólica (muestra los permisos permitidos)
+
 umask -S
 

@@ -1,9 +1,11 @@
-# [Modelo OSI vs TCP/IP y Direccionamiento]
+# Modelo OSI vs TCP/IP y Direccionamiento
 
 **Fecha:** 2026-09-01
 **Categoría:** (Redes)
 
-# Modelo OSI vs. TCP/IP
+---
+
+## Modelo OSI vs. TCP/IP
 El Modelo OSI es una referencia teórica de 7 capas creada por la ISO para estandarizar 
 la comunicación en redes, mientras que TCP/IP es la pila práctica de 4 o 5 capas 
 utilizada realmente en Internet.
@@ -19,10 +21,11 @@ que TCP/IP condensa todo ese trabajo directamente en la Capa de Aplicación.
 | **Tratamiento de Datos** | Separa Aplicación, Presentación y Sesión | Fusiona las capas 5, 6 y 7 en Aplicación |
 | **Desarrollo** | Independiente de los protocolos | Diseñado a la par de los protocolos TCP e IP |
 
+---
 
-# Direccionamiento y Protocolos por Capa (TCP/IP de 5 Capas)
+## Direccionamiento y Protocolos por Capa (TCP/IP de 5 Capas)
 
-## 5. Capa de Aplicación
+### 5. Capa de Aplicación
 Función: Proporcionar la interfaz de red para las aplicaciones del usuario final.
 
 Tipo de Direccionamiento: Nombres de Dominio (FQDN) y URLs (ej. [www.ejemplo.com](https://www.ejemplo.com)).
@@ -31,15 +34,15 @@ PDU: Datos / Mensaje.
 
 Protocolos: HTTP, HTTPS, DNS, DHCP, FTP, SSH, Telnet, SMTP, POP3, IMAP.
 
-Comandos y Herramientas:
+**Comandos y Herramientas:**
 
-curl / wget (peticiones HTTP)
+* curl / wget (peticiones HTTP)
 
-nslookup / dig / host (consultas DNS)
+* nslookup / dig / host (consultas DNS)
 
-ssh (conexión remota)
+* ssh (conexión remota)
 
-## 4. Capa de Transporte
+### 4. Capa de Transporte
 Función: Comunicación extremo a extremo (end-to-end), control de flujo y multiplexación.
 
 Tipo de Direccionamiento: Puertos (0 a 65535, ej. Puerto 80 para HTTP, 443 para HTTPS).
@@ -48,13 +51,13 @@ PDU: Segmento (TCP) / Datagrama (UDP).
 
 Protocolos: TCP (orientado a conexión, confiable) y UDP (no orientado a conexión, rápido).
 
-Comandos y Herramientas:
+**Comandos y Herramientas:**
 
-netstat / ss (listar puertos abiertos y conexiones activas)
+* netstat / ss (listar puertos abiertos y conexiones activas)
 
-nc / netcat (auditar o abrir conexiones por puerto)
+* nc / netcat (auditar o abrir conexiones por puerto)
 
-## 3. Capa de Red (o Internet)
+### 3. Capa de Red (o Internet)
 Función: Enrutamiento de paquetes a través de diferentes redes para llegar al destino.
 
 Tipo de Direccionamiento: Direcciones IP (IPv4: 192.168.1.1, IPv6: fe80::1).
@@ -63,15 +66,15 @@ PDU: Paquete.
 
 Protocolos: IP (IPv4/IPv6), ICMP (mensajes de control y error), IPsec, IGMP.
 
-Comandos y Herramientas:
+**Comandos y Herramientas:**
 
-ping (diagnóstico de conectividad con ICMP)
+* ping (diagnóstico de conectividad con ICMP)
 
-traceroute (Linux) / tracert (Windows) (rastreo de saltos IP)
+* traceroute (Linux) / tracert (Windows) (rastreo de saltos IP)
 
-route / ip route (tabla de enrutamiento)
+* route / ip route (tabla de enrutamiento)
 
-2. Capa de Enlace de Datos
+### 2. Capa de Enlace de Datos
 Función: Transmisión de tramas entre nodos dentro de la misma red local (LAN) y control de acceso al medio.
 
 Tipo de Direccionamiento: Dirección MAC (Física/Hardware, ej. 00:1A:2B:3C:4D:5E).
@@ -80,13 +83,13 @@ PDU: Trama (Frame).
 
 Protocolos: Ethernet (IEEE 802.3), Wi-Fi (IEEE 802.11), ARP (resolución de IP a MAC), PPP, VLAN (802.1Q).
 
-Comandos y Herramientas:
+**Comandos y Herramientas:**
 
-arp -a (muestra la tabla ARP que mapea IP con MAC)
+* arp -a (muestra la tabla ARP que mapea IP con MAC)
 
-ip link / ifconfig (ver la MAC física del adaptador)
+* ip link / ifconfig (ver la MAC física del adaptador)
 
-1. Capa Física
+### 1. Capa Física
 Función: Transmisión de bits puros sobre el medio físico (cables, ondas de radio, fibra).
 
 Tipo de Direccionamiento: Ninguno (señales eléctricas, ópticas o de radio).
@@ -95,12 +98,13 @@ PDU: Bits.
 
 Protocolos/Estándares: 1000BASE-T, DSL, Señales de Radio RF, Conectores RJ-45, Especificaciones de Fibra Óptica.
 
-Comandos y Herramientas:
+**Comandos y Herramientas:**
 
-ethtool (en Linux, para comprobar velocidad del cable, full-duplex, estado físico del puerto).
+* ethtool (en Linux, para comprobar velocidad del cable, full-duplex, estado físico del puerto).
 
+---
 
-# ¿Qué es una dirección IP y para que sirve?
+## ¿Qué es una dirección IP y para que sirve?
 
 Una **dirección de protocolo de Internet (IP)** es el número de identificación único asignado a cada dispositivo conectado a Internet. Una definición de dirección IP es una etiqueta numérica asignada a dispositivos que utilizan Internet para comunicarse. Las computadoras que se comunican a través de Internet o a través de redes locales comparten información a una ubicación específica utilizando direcciones IP.
 
@@ -116,13 +120,13 @@ Las tareas comunes para una dirección IP incluyen la identificación de un host
 Con la asignación matemática de una dirección IP, se puede realizar la identificación única para hacer una conexión a un destino.
 
 
-## Dirección IP pública
+### Dirección IP pública
 
 Una dirección IP pública, o dirección IP externa, se aplica al dispositivo principal que las personas utilizan para conectar su red de Internet comercial o doméstica a su proveedor de servicios de Internet (ISP). En la mayoría de los casos, este será el enrutador. Todos los dispositivos que se conectan a un enrutador se comunican con otras direcciones IP utilizando la dirección IP del enrutador.
 
 Conocer una dirección IP externa es crucial para que las personas abran puertos utilizados para juegos en línea, servidores web y de correo electrónico, transmisión de medios y creación de conexiones remotas.  
 
-## Dirección IP privada
+### Dirección IP privada
 
 Una dirección IP privada, o dirección IP interna, es asignada por una oficina o intranet doméstica (o red de área local) a dispositivos, o por el proveedor de servicios de Internet (ISP). El enrutador de la casa/oficina administra las direcciones IP privadas a los dispositivos que se conectan desde esa red local. Por lo tanto, el enrutador asigna los dispositivos de red de sus direcciones IP privadas a direcciones IP públicas.
 
@@ -132,18 +136,18 @@ En el esquema de direccionamiento IPv6, cada dispositivo posible tiene su propio
 
 [ Dispositivo Local ] --(IP Privada: 192.168.1.15)--> [ Router / NAT ] --(IP Pública: 80.34.12.5)--> [ Internet ]
 
-## Dirección IP estática
+### Dirección IP estática
 
 Todas las direcciones públicas y privadas se definen como estáticas o dinámicas. Una dirección IP que una persona configura y corrige manualmente en la red de su dispositivo se denomina dirección IP estática. Una dirección IP estática no se puede cambiar automáticamente. Un proveedor de servicios de Internet puede asignar una dirección IP estática a una cuenta de usuario. Se asignará la misma dirección IP a ese usuario para cada sesión.
 
-## Dirección IP dinámica
+### Dirección IP dinámica
 
 Una dirección IP dinámica se asigna automáticamente a una red cuando se configura un enrutador. E protocolo  de configuración dinámica de host (DHCP) asigna la distribución de este conjunto dinámico de direcciones IP. El DHCP puede ser el enrutador que proporciona direcciones IP a redes a través de una casa u organización.
 
 Cada vez que un usuario inicia sesión en la red, se asigna una nueva dirección IP del grupo de direcciones IP disponibles (actualmente no asignadas). Un usuario puede alternar aleatoriamente entre varias direcciones IP en múltiples sesiones.
 
 
-## Formato de IPv4
+### Formato de IPv4
 
 Las direcciones IPv4 son básicamente números binarios de 32 bits que consisten en las dos subdirecciones (identificadores) mencionadas anteriormente que identifican la red y el _host_ a la red, respectivamente, con un límite imaginario que los separa. Una dirección IP, como tal, generalmente se muestra como 4 octetos de números, del 0 al 255, representados en forma decimal en lugar de binaria.
 
@@ -180,7 +184,7 @@ Actualmente, las clases están obsoletas y se utiliza CIDR (Classless Inter-Doma
 
 El problema del sistema classful es que desperdiciaba direcciones brutalmente. Si una empresa necesitaba 300 IPs, no le servía una clase C (256 direcciones máx), así que le daban una clase B entera (65,536 direcciones) y sobraban casi todas. Por eso en 1993 se introdujo **CIDR**, que permite máscaras arbitrarias (`/25`, `/27`, etc.) para ajustar el tamaño de la subred a lo que realmente se necesita, sin desperdiciar rangos.
 
-## Por qué esto quedó obsoleto
+### Por qué esto quedó obsoleto
 
 
 Hoy en día, cuando ves una IP, lo que importa es la máscara/prefijo que la acompaña (`/24`, `/16`...), no la "clase" a la que pertenecería por su primer octeto — pero conviene sabérselo porque los exámenes de certificación aún preguntan por ello, y ayuda a entender por qué `/24` es tan común como "red de casa".
