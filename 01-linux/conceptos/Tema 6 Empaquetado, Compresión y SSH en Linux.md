@@ -57,19 +57,20 @@ tar -xzvf archivo.tar.gz -C /tmp
  
 ## Configuración del Servidor SSH (openssh-server)
 
-1. Instalar el servidor SSH
+1. **Instalar el servidor SSH**
 
 sudo apt update
 sudo apt install openssh-server -y
 
-2. Iniciar y habilitar el servicio
+2. **Iniciar y habilitar el servicio**
+
 sudo systemctl enable ssh
 
-3. Verificar el estado del servicio:
+3. **Verificar el estado del servicio:**
 
 sudo systemctl status ssh
 
-4. Obtener la IP de la máquina servidor:
+4. **Obtener la IP de la máquina servidor:**
 
 ip a
 
@@ -80,31 +81,31 @@ En tu máquina cliente, conéctate con la IP obtenida:
 ssh usuario_remoto@192.168.1.50
 
 
-# Autenticación por Claves SSH (Pública y Privada)
+## Autenticación por Claves SSH (Pública y Privada)
 La autenticación mediante par de claves elimina la necesidad de escribir la contraseña y proporciona mayor seguridad criptográfica.
 
 
-1. Generar el par de claves en el cliente:
-Ejecuta esto en tu máquina local (cliente):
+1. **Generar el par de claves en el cliente:**
+Ejecuta esto en la máquina local (cliente):
 
 ssh-keygen -t ed25519 -C "tu_email@ejemplo.com"
 
-resiona Enter para guardar en la ruta por defecto (~/.ssh/id_ed25519). Opcionalmente, puedes añadir una contraseña de paso (passphrase).
+Presiona Enter para guardar en la ruta por defecto (~/.ssh/id_ed25519). Opcionalmente, puedes añadir una contraseña de paso (passphrase).
 
 
-2. Copiar la clave pública al servidor remoto:
+2. **Copiar la clave pública al servidor remoto:**
 Transfiere tu clave pública (id_ed25519.pub) al servidor con la herramienta automatizada:
 
 ssh-copy-id usuario_remoto@192.168.1.50
 
 
-3. Conectarse sin contraseña:
+3. **Conectarse sin contraseña:**
 A partir de ahora, el servidor autenticará la clave privada local contra la clave pública almacenada en ~/.ssh/authorized_keys del servidor:
 
 ssh usuario_remoto@192.168.1.50
 
 
-4. Desactivar la autenticación por contraseña (Opcional - Mayor Seguridad):
+4. **Desactivar la autenticación por contraseña (Opcional - Mayor Seguridad):**
 En el servidor, edita el archivo /etc/ssh/sshd_config:
 
 sudo nano /etc/ssh/sshd_config
@@ -116,4 +117,3 @@ PasswordAuthentication no
 Reinicia el servicio para aplicar cambios:
 
 sudo systemctl restart ssh
-

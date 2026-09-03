@@ -51,16 +51,16 @@ Usa las teclas F1 a F10 (por ejemplo, F9 para enviar señales/matar procesos o F
 
 ---
 
-# Finalización de Procesos (kill)
+## Finalización de Procesos (kill)
 Cuando un proceso no responde o se necesita detener, se envía una señal del sistema para 
 finalizarlo.
 
 ### kill 
 Detiene un proceso individual especificando su número de PID.
 
-SIGTERM (señal 15 por defecto): Solicita la finalización ordenada del proceso.
+- SIGTERM (señal 15 por defecto): Solicita la finalización ordenada del proceso.
 
-SIGKILL (señal 9): Forzado inmediato. Se usa cuando el proceso está colgado.
+- SIGKILL (señal 9): Forzado inmediato. Se usa cuando el proceso está colgado.
 
 Ejemplo:
 
@@ -95,7 +95,7 @@ directa del usuario (por ejemplo, un servidor web o de base de datos). En la may
 de distros modernas se gestionan con systemd mediante la orden systemctl.
 
 
-### status 
+* status 
 Muestra si el servicio está activo (running), detenido o con errores.
 
 Ejemplo:
@@ -103,7 +103,7 @@ Ejemplo:
 sudo systemctl status nginx
 
 
-### start 
+* start 
 Inicia un servicio que está detenido (solo para la sesión actual).
 
 Ejemplo:
@@ -111,7 +111,7 @@ Ejemplo:
 sudo systemctl start nginx
 
 
-### stop 
+* stop 
 Detiene un servicio en ejecución.
 
 Ejemplo:
@@ -119,7 +119,7 @@ Ejemplo:
 sudo systemctl stop nginx
 
 
-### restart 
+* restart 
 Reinicia el servicio (útil tras aplicar cambios en un archivo 
 de configuración).
 
@@ -128,7 +128,7 @@ Ejemplo:
 sudo systemctl restart nginx
 
 
-### enable 
+* enable 
 Configura el servicio para que se inicie automáticamente cuando 
 arranque el sistema.
 
@@ -137,7 +137,7 @@ Ejemplo:
 sudo systemctl enable nginx
 
 
-### disable 
+* disable 
 Evita que el servicio se inicie automáticamente en el arranque.
 
 Ejemplo:

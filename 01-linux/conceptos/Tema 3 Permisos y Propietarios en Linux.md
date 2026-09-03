@@ -36,7 +36,7 @@ distintos, siempre en este orden exacto:
 
 * o (Others): Cualquier otro usuario del sistema.
 
-* Si ejecutas el comando ls -l en la terminal, verás un bloque de 10 caracteres como este:
+* Si ejecutas el comando ls -l en la terminal, verás un bloque de 10 caracteres.
 
 
 ## La Notación Octal o Numérica (4-2-1)
