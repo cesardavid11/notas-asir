@@ -4,15 +4,15 @@
 
 1. Presiona Win + R, escribe ncpa.cpl y pulsa Enter.
 
-![alt text](<Configurar la IP Estática en el Servidor GUI. paso 1.png>)
+![Paso 1](../img/ip-gui-paso1.png)
 
 2. Clic derecho en la tarjeta de red > Propiedades.
 
-![alt text](<Configurar la IP Estática en el Servidor GUI. paso 2.png>)
+![Paso 2](../img/ip-gui-paso2.png)
 
 3. Selecciona Protocolo de Internet versión 4 (TCP/IPv4) > Propiedades.
 
-![alt text](<Configurar la IP Estática en el Servidor GUI.paso 3.png>)
+![Paso 3](../img/ip-gui-paso3.png)
 
 4. Selecciona "Usar la siguiente dirección IP":
 
@@ -23,7 +23,7 @@
 
 * DNS: 127.0.0.1 (o 192.168.10.10)
 
-![alt text](<Configurar la IP Estática en el Servidor GUI.paso 4.png>)
+![Paso 4](../img/ip-gui-paso4.png)
 
 ---
 
