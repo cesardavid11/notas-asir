@@ -40,10 +40,10 @@ New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "192.168.10.10" -PrefixLe
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses "127.0.0.1"
 ```
 
-![alt text](<Configurar la IP Estática en el Servidor desde PowerShell. paso 1.png>)
+![Paso 1](../img/ip-terminal-paso1.png)
 
-![alt text](<Configurar la IP Estática en el Servidor desde PowerShell. paso 2.png>)
+![Paso 2](../img/ip-terminal-paso2.png)
 
-![alt text](<Configurar la IP Estática en el Servidor desde PowerShell. paso 3.png>)
+![Paso 3](../img/ip-terminal-paso3.png)
 
-![alt text](<Configurar la IP Estática en el Servidor desde PowerShell. paso 4 Resultado.png>)
+![Paso 4](../img/ip-terminal-paso4.png)
