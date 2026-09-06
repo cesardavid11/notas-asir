@@ -1,4 +1,4 @@
-# 📚 Notas ASIR — Cesar
+# 📚 Notas ASIR — Cesar Guerra
 
 Repositorio de notas técnicas del ciclo ASIR (IES Doctor Fleming, Oviedo), enfocado en administración de sistemas.
 
@@ -32,11 +32,4 @@ Cada tema tiene dos tipos de nota posibles:
 4. Errores que cometiste y cómo los arreglaste (sección "Troubleshooting")
 5. Commit con mensaje descriptivo: `git commit -m "docs: nota sobre Kerberoasting"`
 
-## Estado del repo
 
-- [x] Estructura base
-- [ ] Migrar notas de AD DS (promoción DC, OUs, GPOs)
-- [ ] Migrar notas de Kerberos + ataques
-- [ ] Migrar notas de subnetting/VLSM
-- [ ] Migrar writeups de Bandit
-- [ ] Migrar roadmap Security+

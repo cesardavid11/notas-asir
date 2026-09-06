@@ -39,11 +39,3 @@ New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "192.168.10.10" -PrefixLe
 # Configurar el servidor DNS hacia sí mismo
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses "127.0.0.1"
 ```
-
-![Paso 1](../img/ip-terminal-paso1.png)
-
-![Paso 2](../img/ip-terminal-paso2.png)
-
-![Paso 3](../img/ip-terminal-paso3.png)
-
-![Paso 4](../img/ip-terminal-paso4.png)
