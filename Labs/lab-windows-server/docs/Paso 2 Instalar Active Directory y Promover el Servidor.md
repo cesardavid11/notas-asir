@@ -19,10 +19,11 @@
 
 
 
-4. Selecciona Agregar un nuevo bosque, asigna el nombre labasir.local, escribe la contraseña DSRM y completa el asistente. Se reiniciará solo.
+4. Selecciona Agregar un nuevo bosque, asigna el nombre MIDOMINIO.local, escribe la contraseña DSRM y completa el asistente. Se reiniciará solo.
 
 ![Paso 4](../img/install-ad-paso5.png)
 
+---
 
 ## Opción B: Desde PowerShell (Como Administrador)
 
@@ -31,7 +32,7 @@
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
 # 2. Promover a Controlador de Dominio y crear el bosque (te pedirá la contraseña DSRM)
-Install-ADDSForest -DomainName "labasir.local" -InstallDns:$true -Force
+Install-ADDSForest -DomainName "MIDOMINIO.local" -InstallDns:$true -Force
 ```
 
 

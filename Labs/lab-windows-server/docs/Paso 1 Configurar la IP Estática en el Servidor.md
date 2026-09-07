@@ -1,4 +1,4 @@
-# Paso 1: Configurar la IP Estática en el Servidor
+ Paso 1: Configurar la IP Estática en el Servidor
 
 ## Opción A: Desde la Interfaz Gráfica (GUI)
 
